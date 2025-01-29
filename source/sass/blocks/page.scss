@@ -1,0 +1,44 @@
+.page {
+  height: 100%;
+}
+
+.page__body {
+  min-height: 100%;
+  font-family: $font-famyly;
+  color: $basic-primary;
+  background-color: $basic-secondary;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+  min-width: 320px;
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: $tablet-width) {
+    font-size: 16px;
+  }
+
+  @media (min-width: $desktop-width) {
+    line-height: 26px;
+  }
+
+  // &--overlay {
+  //   overflow: hidden;
+  // }
+
+  // &--overlay::after {
+  //   content: "";
+  //   display: block;
+  //   width: 100%;
+  //   position: fixed;
+  //   top: 0;
+  //   left: 0;
+  //   height: 100%;
+  //   z-index: 2;
+  //   background-color: $color-overlay-body;
+  // }
+}
+
+.page__body-main {
+  flex-grow: 1;
+}
