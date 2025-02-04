@@ -1,0 +1,116 @@
+.button {
+  cursor: pointer;
+  margin: 0;
+  padding: 4px;
+  box-sizing: border-box;
+  color: inherit;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 12px;
+  line-height: 12px;
+  font-weight: 500;
+  letter-spacing: 0.24px;
+  background-color: transparent;
+  border: 1px solid currentColor;
+  border-radius: 30px;
+  min-height: 44px;
+  display: grid;
+  grid-template-columns: 1fr min-content;
+  grid-auto-flow: row dense;
+  align-items: center;
+  justify-items: center;
+  column-gap: 4px;
+  transition: color 0.2s ease, background-color 0.2s ease;
+
+  @media (min-width: $tablet-width) {
+    font-size: 14px;
+    line-height: 14px;
+    min-height: 56px;
+    letter-spacing: 0.28px;
+  }
+
+  @media (min-width: $desktop-width) {
+    min-height: 58px;
+  }
+
+  &--primary {
+    color: $basic-accent;
+  }
+
+  &--primary:not(:disabled):hover {
+    color: $white;
+    background-color: $basic-accent;
+    transition: color 0.3s ease, background-color 0.3s ease;
+  }
+
+  &:not(:disabled):focus-visible {
+    outline: none;
+  }
+
+  &--primary:not(:disabled):active {
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  &:disabled,
+  &--disabled {
+    pointer-events: none;
+    color: $color-disabled;
+  }
+
+  &::after {
+    content: "";
+    display: block;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background-color: currentColor;
+    grid-area: 1 / 2;
+
+    @media (min-width: $tablet-width) {
+      width: 46px;
+      height: 46px;
+    }
+  }
+
+  &::before {
+    content: "";
+    display: block;
+    width: 34px;
+    height: 34px;
+    mask-image: url("/__spritemap#sprite-icon-arrow-test-view");
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: 8px 8px;
+    background-color: $white;
+    grid-area: 1 / 2;
+    transition: transform 0.2s ease;
+
+    @media (min-width: $tablet-width) {
+      width: 46px;
+      height: 46px;
+    }
+  }
+
+  &--primary:not(:disabled):hover::before {
+    background-color: $basic-accent;
+    transform: rotate(45deg);
+    transition: transform 0.3s ease;
+  }
+
+  &:not(:disabled):focus-visible::before {
+    transform: rotate(45deg);
+  }
+
+  &--primary:not(:disabled):active::after {
+    background-color: $white;
+  }
+
+  &--primary:not(:disabled):active::before {
+    background-color: rgba(49, 109, 194, 0.7);
+  }
+
+  &:disabled::before,
+  &--disabled::before {
+    background-color: rgba(255, 255, 255, 0.6);
+  }
+}

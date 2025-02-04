@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Internship</title>
-  <meta name="description" content="Internship">
+  <meta name="description" content="Проект Internship">
   <link rel="icon" href="favicon.ico">
   <link rel="icon" href="favicons/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="favicons/apple.png">
@@ -17,8 +17,159 @@
 </head>
 
 <body class="page__body">
-  <header></header>
-  <main class="page__body-main"></main>
+
+  <main class="page__body-main">
+    <h1 class="visually-hidden">Программа стажировки Internship</h1>
+    <section class="hero" data-test="hero">
+      <header class="hero__header page-header container">
+        <div class="page-header__logo">
+          <img src="img/logotype.svg" width="52" height="52" alt="Логотип проекта стажировок Internship">
+        </div>
+        <nav class="page-header__navigation navigation">
+          <button class="navigation__toggle" type="button" aria-expanded="false">Меню</button>
+          <ul class="navigation__list site-list">
+            <li class="site-list__item">
+              <a class="site-list__link" href="#">О проекте</a>
+            </li>
+            <li class="site-list__item">
+              <a class="site-list__link site-list__link--dropdown" href="#" aria-expanded="false" aria-controls="programs-submenu">Программы</a>
+              <ul class="site-list__submenu" id="programs-submenu" aria-hidden="true">
+                <li class="site-list__item">
+                  <a class="site-list__link" href="#">Стажировки</a>
+                </li>
+                <li class="site-list__item">
+                  <a class="site-list__link" href="#">Волонтёрство</a>
+                </li>
+                <li class="site-list__item">
+                  <a class="site-list__link" href="#">Учёба</a>
+                </li>
+                <li class="site-list__item">
+                  <a class="site-list__link" href="#">Религия</a>
+                </li>
+              </ul>
+            </li>
+            <li class="site-list__item">
+              <a class="site-list__link" href="#">как поехать</a>
+            </li>
+            <li class="site-list__item">
+              <a class="site-list__link" href="#">Отзывы</a>
+            </li>
+            <li class="site-list__item">
+              <a class="site-list__link site-list__link--dropdown" href="#" aria-expanded="false" aria-controls="news-submenu">новости</a>
+              <ul class="site-list__submenu" id="news-submenu" aria-hidden="true">
+                <li class="site-list__item">
+                  <a class="site-list__link" href="#">общее</a>
+                </li>
+                <li class="site-list__item">
+                  <a class="site-list__link" href="#">Волонтёрство</a>
+                </li>
+                <li class="site-list__item">
+                  <a class="site-list__link" href="#">Стажировки</a>
+                </li>
+                <li class="site-list__item">
+                  <a class="site-list__link" href="#">Карьера</a>
+                </li>
+                <li class="site-list__item">
+                  <a class="site-list__link" href="#">путешествия</a>
+                </li>
+              </ul>
+            </li>
+            <li class="site-list__item">
+              <a class="site-list__link" href="#">Контакты</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <div class="hero__content">
+        <h2 class="visually-hidden">Популярные программы стажировок</h2>
+        <div class="hero__slider swiper">
+          <ul class="hero__list swiper-wrapper">
+            <li class="hero__item swiper-slide">
+              <div class="hero__slide-illustration">
+                <picture>
+                  <source media="(min-width: 1440px)" width="1440" height="800" type="image/webp" srcset="img/hero/hero-image-slide-1-desktop@1x.webp 1x, img/hero/hero-image-slide-1-desktop@2x.webp 2x">
+                  <source media="(min-width: 768px)" width="768" height="1024" type="image/webp" srcset="img/hero/hero-image-slide-1-tablet@1x.webp 1x, img/hero/hero-image-slide-1-tablet@2x.webp 2x">
+                  <source width="320" height="568" type="image/webp" srcset="img/hero/hero-image-slide-1-mobile@1x.webp 1x, img/hero/hero-image-slide-1-mobile@2x.webp 2x">
+                  <source media="(min-width: 1440px)" width="1440" height="800" type="image/jpeg" srcset="img/hero/hero-image-slide-1-desktop@1x.jpg 1x, img/hero/hero-image-slide-1-desktop@2x.jpg 2x">
+                  <source media="(min-width: 768px)" width="768" height="1024" type="image/jpeg" srcset="img/hero/hero-image-slide-1-tablet@1x.jpg 1x, img/hero/hero-image-slide-1-tablet@2x.jpg 2x">
+                  <img src="img/hero/hero-image-slide-1-mobile@1x.jpg" srcset="img/hero/hero-image-slide-1-mobile@2x.jpg 2x" width="320" height="568" alt="Участница стажировки в желтой блузке" loading="lazy">
+                </picture>
+              </div>
+              <div class="hero__slide-information container">
+                <div class="hero__pagination swiper-pagination decoration-angle decoration-angle--bottom"></div>
+                <div class="hero__slide-content">
+                  <h3 class="hero__slide-title">Глобальный
+                    профессиональный
+                    опыт обучения
+                    за рубежом</h3>
+                  <div class="hero__text-content decoration-angle decoration-angle--top">
+                    <p>Погрузитесь в академическую
+                      программу, проходя практику
+                      в разных городах, ощущая
+                      настоящий студенческий стиль жизни!</p>
+                  </div>
+                  <div class="hero__button-wrapper decoration-angle decoration-angle--top">
+                    <a class="hero__button button button--primary" href="#">подробнее</a>
+                  </div>
+                </div>
+
+              </div>
+            </li>
+            <li class="hero__item swiper-slide">
+              <div class="hero__slide-illustration">
+                <picture>
+                  <source media="(min-width: 1440px)" width="1440" height="800" type="image/webp" srcset="img/hero/hero-image-slide-2-desktop@1x.webp 1x, img/hero/hero-image-slide-2-desktop@2x.webp 2x">
+                  <source media="(min-width: 768px)" width="768" height="1024" type="image/webp" srcset="img/hero/hero-image-slide-2-tablet@1x.webp 1x, img/hero/hero-image-slide-2-tablet@2x.webp 2x">
+                  <source width="320" height="568" type="image/webp" srcset="img/hero/hero-image-slide-2-mobile@1x.webp 1x, img/hero/hero-image-slide-2-mobile@2x.webp 2x">
+                  <source media="(min-width: 1440px)" width="1440" height="800" type="image/jpeg" srcset="img/hero/hero-image-slide-2-desktop@1x.jpg 1x, img/hero/hero-image-slide-2-desktop@2x.jpg 2x">
+                  <source media="(min-width: 768px)" width="768" height="1024" type="image/jpeg" srcset="img/hero/hero-image-slide-2-tablet@1x.jpg 1x, img/hero/hero-image-slide-2-tablet@2x.jpg 2x">
+                  <img src="img/hero/hero-image-slide-2-mobile@1x.jpg" srcset="img/hero/hero-image-slide-2-mobile@2x.jpg 2x" width="320" height="568" alt="Участница стажировки в желтой блузке" loading="lazy">
+                </picture>
+              </div>
+              <div class="hero__slide-information container">
+                <div class="hero__slide-content">
+                  <h3 class="hero__slide-title">Волонтёрские программы — внесите свой вклад в общество</h3>
+                  <div class="hero__text-content decoration-angle decoration-angle--top">
+                    <p>Возможности для преподавания, органического сельского хозяйства, устойчивого образа жизни и другое.</p>
+                  </div>
+                  <div class="hero__button-wrapper decoration-angle decoration-angle--top">
+                    <a class="hero__button button button--primary" href="#">подробнее</a>
+                  </div>
+
+                </div>
+              </div>
+            </li>
+            <li class="hero__item swiper-slide">
+              <div class="hero__slide-illustration">
+                <picture>
+                  <source media="(min-width: 1440px)" width="1440" height="800" type="image/webp" srcset="img/hero/hero-image-slide-3-desktop@1x.webp 1x, img/hero/hero-image-slide-3-desktop@2x.webp 2x">
+                  <source media="(min-width: 768px)" width="768" height="1024" type="image/webp" srcset="img/hero/hero-image-slide-3-tablet@1x.webp 1x, img/hero/hero-image-slide-3-tablet@2x.webp 2x">
+                  <source width="320" height="568" type="image/webp" srcset="img/hero/hero-image-slide-3-mobile@1x.webp 1x, img/hero/hero-image-slide-3-mobile@2x.webp 2x">
+                  <source media="(min-width: 1440px)" width="1440" height="800" type="image/jpeg" srcset="img/hero/hero-image-slide-3-desktop@1x.jpg 1x, img/hero/hero-image-slide-3-desktop@2x.jpg 2x">
+                  <source media="(min-width: 768px)" width="768" height="1024" type="image/jpeg" srcset="img/hero/hero-image-slide-3-tablet@1x.jpg 1x, img/hero/hero-image-slide-3-tablet@2x.jpg 2x">
+                  <img src="img/hero/hero-image-slide-3-mobile@1x.jpg" srcset="img/hero/hero-image-slide-3-mobile@2x.jpg 2x" width="320" height="568" alt="Участница стажировки в желтой блузке" loading="lazy">
+                </picture>
+              </div>
+              <div class="hero__slide-information container">
+                <div class="hero__slide-content">
+                  <h3 class="hero__slide-title">Программы стажировок
+                    в крупнейших компаниях мира</h3>
+                  <div class="hero__text-content decoration-angle decoration-angle--top">
+                    <p>Получите незаменимый опыт работы в ведущих мировых компаниях и государственных организациях.</p>
+                  </div>
+                  <div class="hero__button-wrapper decoration-angle decoration-angle--top">
+                    <a class="hero__button button button--primary" href="#">подробнее</a>
+                  </div>
+                </div>
+
+              </div>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+  </main>
   <footer></footer>
   <script type="module" src="js/main.js"></script>
 </body>

@@ -26,17 +26,17 @@
   //   overflow: hidden;
   // }
 
-  // &--overlay::after {
-  //   content: "";
-  //   display: block;
-  //   width: 100%;
-  //   position: fixed;
-  //   top: 0;
-  //   left: 0;
-  //   height: 100%;
-  //   z-index: 2;
-  //   background-color: $color-overlay-body;
-  // }
+  &--overlay::after {
+    content: "";
+    display: block;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    z-index: 2;
+    background-color: $color-overlay-body;
+  }
 }
 
 .page__body-main {
