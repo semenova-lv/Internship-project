@@ -29,10 +29,6 @@
     letter-spacing: 0.28px;
   }
 
-  @media (min-width: $desktop-width) {
-    min-height: 58px;
-  }
-
   &--primary {
     color: $basic-accent;
   }
@@ -77,7 +73,7 @@
     display: block;
     width: 34px;
     height: 34px;
-    mask-image: url("/__spritemap#sprite-icon-arrow-test-view");
+    mask-image: url("/__spritemap#sprite-icon-arrow-view");
     mask-repeat: no-repeat;
     mask-position: center;
     mask-size: 8px 8px;
