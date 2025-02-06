@@ -29,7 +29,7 @@
           <button class="navigation__toggle" type="button" aria-expanded="false">Меню</button>
           <ul class="navigation__list site-list">
             <li class="site-list__item">
-              <a class="site-list__link" href="#">О проекте</a>
+              <a class="site-list__link" href="#about">О проекте</a>
             </li>
             <li class="site-list__item">
               <a class="site-list__link site-list__link--dropdown" href="#" aria-expanded="false" aria-controls="programs-submenu">Программы</a>
@@ -169,7 +169,7 @@
 
       </div>
     </section>
-    <section class="about container" data-test="about">
+    <section class="about container" data-test="about" id="about">
       <div class="about__description-wrapper">
         <h2 class="about__title title">О проекте «Стажировка»</h2>
         <p>«Стажировка» — совместный проект
@@ -212,6 +212,114 @@
             программы</p>
         </li>
       </ul>
+    </section>
+    <section class="programs" data-test="programs">
+      <div class="programs__wrapper container">
+        <h2 class="programs__title title">Программы</h2>
+        <div class="programs__slider-buttons">
+          <button class="programs__slider-button programs__slider-button--prev slider-button" type="button" aria-label="Показать предыдущий слайд"></button>
+          <button class="programs__slider-button programs__slider-button--next slider-button slider-button--next" type="button" aria-label="Показать следующий слайд"></button>
+        </div>
+
+        <div class="programs__slider swiper">
+          <ul class="programs__list swiper-wrapper">
+            <li class="programs__item program-card swiper-slide">
+              <div class="program-card__illustration">
+                <picture>
+                  <source media="(min-width: 1440px)" width="392" height="420" type="image/webp" srcset="img/programs/programs-image-internship-desktop@1x.webp 1x, img/programs/programs-image-internship-desktop@2x.webp 2x">
+                  <source media="(min-width: 768px)" width="324" height="420" type="image/webp" srcset="img/programs/programs-image-internship-tablet@1x.webp 1x, img/programs/programs-image-internship-tablet@2x.webp 2x">
+                  <source width="290" height="400" type="image/webp" srcset="img/programs/programs-image-internship-mobile@1x.webp 1x, img/programs/programs-image-internship-mobile@2x.webp 2x">
+                  <source media="(min-width: 1440px)" width="392" height="420" type="image/jpeg" srcset="img/programs/programs-image-internship-desktop@1x.jpg 1x, img/programs/programs-image-internship-desktop@2x.jpg 2x">
+                  <source media="(min-width: 768px)" width="324" height="420" type="image/jpeg" srcset="img/programs/programs-image-internship-tablet@1x.jpg 1x, img/programs/programs-image-internship-tablet@2x.jpg 2x">
+                  <img src="img/programs/programs-image-internship-mobile@1x.jpg@1x.jpg" srcset="img/programs/programs-image-internship-mobile@2x.jpg 2x" width="290" height="400" alt="Фото двух людей на стажировке" loading="lazy">
+                </picture>
+              </div>
+              <div class="program-card__information">
+                <h3 class="program-card__title">Стажировки</h3>
+                <div class="program-card__text-content">
+                  <p>Получите незаменимый опыт
+                    работы в крупнейших мировых
+                    компаниях.</p>
+                  <a class="program-card__button" href="#">
+                    <span class="visually-hidden">Перейти на страницу программы</span>
+                  </a>
+                </div>
+              </div>
+            </li>
+            <li class="programs__item program-card swiper-slide">
+              <div class="program-card__illustration">
+                <picture>
+                  <source media="(min-width: 1440px)" width="392" height="420" type="image/webp" srcset="img/programs/programs-image-volunteering-desktop@1x.webp 1x, img/programs/programs-image-volunteering-desktop@2x.webp 2x">
+                  <source media="(min-width: 768px)" width="324" height="420" type="image/webp" srcset="img/programs/programs-image-volunteering-tablet@1x.webp 1x, img/programs/programs-image-volunteering-tablet@2x.webp 2x">
+                  <source width="290" height="400" type="image/webp" srcset="img/programs/programs-image-volunteering-mobile@1x.webp 1x, img/programs/programs-image-volunteering-mobile@2x.webp 2x">
+                  <source media="(min-width: 1440px)" width="392" height="420" type="image/jpeg" srcset="img/programs/programs-image-volunteering-desktop@1x.jpg 1x, img/programs/programs-image-volunteering-desktop@2x.jpg 2x">
+                  <source media="(min-width: 768px)" width="324" height="420" type="image/jpeg" srcset="img/programs/programs-image-volunteering-tablet@1x.jpg 1x, img/programs/programs-image-volunteering-tablet@2x.jpg 2x">
+                  <img src="img/programs/programs-image-volunteering-mobile@1x.jpg@1x.jpg" srcset="img/programs/programs-image-volunteering-mobile@2x.jpg 2x" width="290" height="400" alt="Фото волонтера в одноименной футболке" loading="lazy">
+                </picture>
+              </div>
+              <div class="program-card__information">
+                <h3 class="program-card__title">Волонтёрство</h3>
+                <div class="program-card__text-content">
+                  <p>Помогайте другим
+                    и развивайте свои
+                    лидерские&nbsp;качества</p>
+                  <a class="program-card__button" href="#">
+                    <span class="visually-hidden">Перейти на страницу программы</span>
+                  </a>
+                </div>
+              </div>
+            </li>
+            <li class="programs__item program-card swiper-slide">
+              <div class="program-card__illustration">
+                <picture>
+                  <source media="(min-width: 1440px)" width="392" height="420" type="image/webp" srcset="img/programs/programs-image-studies-desktop@1x.webp 1x, img/programs/programs-image-studies-desktop@2x.webp 2x">
+                  <source media="(min-width: 768px)" width="324" height="420" type="image/webp" srcset="img/programs/programs-image-studies-tablet@1x.webp 1x, img/programs/programs-image-studies-tablet@2x.webp 2x">
+                  <source width="290" height="400" type="image/webp" srcset="img/programs/programs-image-studies-mobile@1x.webp 1x, img/programs/programs-image-studies-mobile@2x.webp 2x">
+                  <source media="(min-width: 1440px)" width="392" height="420" type="image/jpeg" srcset="img/programs/programs-image-studies-desktop@1x.jpg 1x, img/programs/programs-image-studies-desktop@2x.jpg 2x">
+                  <source media="(min-width: 768px)" width="324" height="420" type="image/jpeg" srcset="img/programs/programs-image-studies-tablet@1x.jpg 1x, img/programs/programs-image-studies-tablet@2x.jpg 2x">
+                  <img src="img/programs/programs-image-studies-mobile@1x.jpg@1x.jpg" srcset="img/programs/programs-image-studies-mobile@2x.jpg 2x" width="290" height="400" alt="Фото двух людей на стажировке" loading="lazy">
+                </picture>
+              </div>
+              <div class="program-card__information">
+                <h3 class="program-card__title">Учёба</h3>
+                <div class="program-card__text-content">
+                  <p>Получите образование и измените
+                    своё будущее.</p>
+                  <a class="program-card__button" href="#">
+                    <span class="visually-hidden">Перейти на страницу программы</span>
+                  </a>
+                </div>
+              </div>
+            </li>
+            <li class="programs__item program-card swiper-slide">
+              <div class="program-card__illustration">
+                <picture>
+                  <source media="(min-width: 1440px)" width="392" height="420" type="image/webp" srcset="img/programs/programs-image-internship-desktop@1x.webp 1x, img/programs/programs-image-internship-desktop@2x.webp 2x">
+                  <source media="(min-width: 768px)" width="324" height="420" type="image/webp" srcset="img/programs/programs-image-internship-tablet@1x.webp 1x, img/programs/programs-image-internship-tablet@2x.webp 2x">
+                  <source width="290" height="400" type="image/webp" srcset="img/programs/programs-image-internship-mobile@1x.webp 1x, img/programs/programs-image-internship-mobile@2x.webp 2x">
+                  <source media="(min-width: 1440px)" width="392" height="420" type="image/jpeg" srcset="img/programs/programs-image-internship-desktop@1x.jpg 1x, img/programs/programs-image-internship-desktop@2x.jpg 2x">
+                  <source media="(min-width: 768px)" width="324" height="420" type="image/jpeg" srcset="img/programs/programs-image-internship-tablet@1x.jpg 1x, img/programs/programs-image-internship-tablet@2x.jpg 2x">
+                  <img src="img/programs/programs-image-internship-mobile@1x.jpg@1x.jpg" srcset="img/programs/programs-image-internship-mobile@2x.jpg 2x" width="290" height="400" alt="Фото двух людей на стажировке" loading="lazy">
+                </picture>
+              </div>
+              <div class="program-card__information">
+                <h3 class="program-card__title">Стажировки</h3>
+                <div class="program-card__text-content">
+                  <p>Получите незаменимый опыт
+                    работы в крупнейших мировых
+                    компаниях.</p>
+                  <a class="program-card__button" href="#">
+                    <span class="visually-hidden">Перейти на страницу программы</span>
+                  </a>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="programs__slider-scrollbar"></div>
+        <a class="programs__button button button--primary" href="#">все программы</a>
+      </div>
+
     </section>
   </main>
   <footer></footer>

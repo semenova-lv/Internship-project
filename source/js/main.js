@@ -5,3 +5,4 @@
 
 import './menu.js';
 import './hero.js';
+import './programs.js';
