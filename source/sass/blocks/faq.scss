@@ -1,0 +1,255 @@
+.faq {
+  padding-block: 50px;
+
+  @media (min-width: $desktop-width) {
+    padding-block: 60px;
+  }
+}
+
+.faq__title {
+  margin: 0;
+  margin-bottom: 30px;
+  text-align: center;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 40px;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding-block: 11px;
+    margin-bottom: 60px;
+  }
+}
+
+
+.faq__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+
+  @media (min-width: $desktop-width) {
+    padding-inline: 106px;
+  }
+}
+
+.faq__item {
+  padding: 20px 15px;
+  border: 2px solid $basic-accent;
+  border-radius: 14px;
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr;
+  color: $basic-accent;
+
+  @media (min-width: $tablet-width) {
+    padding: 30px;
+    border-radius: 16px;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding: 40px;
+  }
+
+  h3 {
+    margin: 0;
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 400;
+    grid-area: 1 / 1;
+    padding-right: 48px;
+
+    @media (min-width: $tablet-width) {
+      font-size: 22px;
+      line-height: 26px;
+    }
+
+    @media (min-width: $desktop-width) {
+      font-size: 28px;
+      line-height: 34px;
+    }
+  }
+
+  br {
+    display: none;
+
+    @media (min-width: $tablet-width) {
+      display: block;
+    }
+
+    @media (min-width: $desktop-width) {
+      display: none;
+    }
+  }
+
+  div {
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out;
+    padding-top: 0;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  p:not(:last-of-type) {
+    margin-bottom: 8px;
+  }
+}
+
+.faq__item:has(.faq__button-toggle--open) {
+  background-color: $basic-accent;
+  color: $white;
+}
+
+.faq__item:has(.faq__button-toggle--open) div {
+  padding-top: 20px;
+  transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out;
+}
+
+.faq__item:has(.faq__button-toggle:not(:disabled):hover),
+.faq__item:has(.faq__button-toggle:not(:disabled):focus-visible) {
+  background-color: $white;
+}
+
+.faq__item:has(.faq__button-toggle:not(:disabled):active) {
+  border-color: $color-active-button;
+}
+
+.faq__item:has(.faq__button-toggle:not(:disabled):active) h3 {
+  color: $color-active-button;
+}
+
+.faq__item:has(.faq__button-toggle--open:not(:disabled):hover),
+.faq__item:has(.faq__button-toggle--open:not(:disabled):focus-visible) {
+  border-color: $white;
+  background-color: $basic-accent;
+}
+
+.faq__item:has(.faq__button-toggle--open:not(:disabled):active) {
+  background-color: $color-active-button;
+}
+
+.faq__item:has(.faq__button-toggle--open:not(:disabled):active) h3 {
+  color: inherit;
+}
+
+.faq__button-toggle {
+  grid-area: 1 / 1;
+  align-self: stretch;
+  width: 100%;
+  height: auto;
+  color: inherit;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+  cursor: pointer;
+  position: relative;
+  border: none;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: flex-end;
+  align-items: center;
+
+  @media (min-width: $tablet-width) {
+    align-items: flex-start;
+  }
+
+  &::before {
+    content: "";
+    display: block;
+    box-sizing: border-box;
+
+    // margin-left: auto;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: $basic-accent;
+
+    transition: background-color 0.3s ease;
+
+    grid-area: 1 / 1;
+  }
+
+  &::after {
+    content: "";
+    display: block;
+    width: 40px;
+    height: 40px;
+    background-color: $white;
+    mask-image: url("/__spritemap#sprite-icon-plus-view");
+    mask-repeat: no-repeat;
+    mask-size: 18px 18px;
+    mask-position: center;
+
+    grid-area: 1 / 1;
+
+    // position: absolute;
+    // top: 50%;
+    // right: 0;
+    // transform: translateY(-50%) rotate(0deg);
+    transform: rotate(0deg);
+    transition: transform 0.3s ease, mask-image 0.3s ease;
+  }
+
+  &--open::before {
+    background-color: $white;
+  }
+
+  &--open::after {
+    mask-image: url("/__spritemap#sprite-icon-minus-view");
+    mask-size: 18px 2px;
+    background-color: $basic-accent;
+
+    // transform: translateY(-50%) rotate(180deg);
+    transform: rotate(180deg);
+    transition: transform 0.3s ease, mask-image 0.3s ease;
+  }
+
+  &:not(:disabled):hover::before,
+  &:not(:disabled):focus-visible::before {
+    background-color: transparent;
+    border: 1px solid currentColor;
+  }
+
+  &:not(:disabled):hover::after,
+  &:not(:disabled):focus-visible::after {
+    background-color: currentColor;
+  }
+
+  &:not(:disabled):active::before {
+    background-color: $color-active-button;
+  }
+
+  &:not(:disabled):active::after {
+    background-color: $white;
+  }
+
+  &:not(:disabled):focus {
+    outline: none;
+  }
+
+  &--open:not(:disabled):active::before {
+    background-color: $white;
+  }
+
+  &--open:not(:disabled):active::after {
+    background-color: $color-active-button;
+  }
+
+  &:disabled {
+    cursor: default;
+  }
+
+  &:disabled::before {
+    background-color: $color-disabled;
+  }
+
+  &:disabled::after {
+    background-color: $white;
+    opacity: 0.6;
+  }
+}
