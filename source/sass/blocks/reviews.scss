@@ -46,11 +46,10 @@
 }
 
 .reviews__list .reviews__item {
-  height: 100%;
+  height: auto;
   display: grid;
   grid-template-columns: 1fr;
   row-gap: 15px;
-  align-self: stretch;
 
   @media (min-width: $tablet-width) {
     width: 560px;

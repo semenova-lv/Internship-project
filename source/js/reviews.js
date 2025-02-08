@@ -7,7 +7,7 @@ const reviewsSlider = new Swiper('.reviews__slider', {
   modules: [Navigation, Scrollbar],
   slidesPerView: 'auto',
   spaceBetween: 30,
-  autoHeight: true,
+  // autoHeight: true,
 
   navigation: {
     nextEl: '.reviews__button--next',
