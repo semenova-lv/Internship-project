@@ -1,0 +1,143 @@
+.review-card {
+  border: 2px solid $basic-accent;
+  border-radius: 16px;
+  box-sizing: border-box;
+
+  padding: 30px 15px;
+
+  @media (min-width: $tablet-width) {
+    padding: 50px;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding: 50px 46px 50px 50px;
+  }
+}
+
+.review-card__information {
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  column-gap: 10px;
+  align-items: center;
+
+  @media (min-width: $tablet-width) {
+    column-gap: 15px;
+  }
+}
+
+.review-card__illustration {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+
+  @media (min-width: $tablet-width) {
+    width: 90px;
+    height: 90px;
+  }
+
+  img {
+    display: block;
+  }
+}
+
+.review-card__title {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 400;
+  text-transform: capitalize;
+  color: $basic-accent;
+
+  @media (min-width: $tablet-width) {
+    font-size: 20px;
+    line-height: 24px;
+    padding-top: 1px;
+  }
+
+  @media (min-width: $desktop-width) {
+    font-size: 18px;
+    padding-top: 0;
+  }
+}
+
+.review-card__details-list {
+  margin: 0;
+  margin-bottom: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 25px;
+
+  @media (min-width: $tablet-width) {
+    justify-self: flex-end;
+    margin-bottom: 0;
+  }
+}
+
+.review-card__details-item {
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+
+  @media (min-width: $tablet-width) {
+    row-gap: 10px;
+  }
+}
+
+.review-card__details-subtitle {
+  font-size: 12px;
+  line-height: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.12px;
+  color: $basic-accent;
+}
+
+.review-card__details-value {
+  margin: 0;
+  font-size: 12px;
+  line-height: 14px;
+
+  @media (min-width: $tablet-width) {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+.review-card__text-content {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+
+  @media (min-width: $tablet-width) {
+    grid-column: 1 / -1;
+    align-self: flex-start;
+    row-gap: 24px;
+  }
+
+  @media (min-width: $desktop-width) {
+    row-gap: 25px;
+  }
+
+  b {
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 400;
+    color: $basic-accent;
+
+    @media (min-width: $tablet-width) {
+      font-size: 20px;
+      line-height: 24px;
+    }
+
+    @media (min-width: $desktop-width) {
+      font-size: 24px;
+      line-height: 26px;
+    }
+  }
+
+  p {
+    margin: 0;
+  }
+}

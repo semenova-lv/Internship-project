@@ -1,0 +1,110 @@
+.reviews {
+  padding-block: 50px;
+
+  @media (min-width: $desktop-width) {
+    padding-block: 60px;
+  }
+}
+
+.reviews__wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 30px;
+  align-items: center;
+
+  @media ($desktop-width > width >= $tablet-width) {
+    padding-right: calc((100% - 768px) / 2);
+  }
+
+  @media (min-width: $tablet-width) {
+    row-gap: 40px;
+  }
+}
+
+.reviews__title {
+  grid-area: 1 / 1;
+  margin: 0;
+  padding-right: 65px;
+
+  @media (min-width: $tablet-width) {
+    padding-right: 0;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding: 5px 3px;
+  }
+}
+
+.reviews__slider {
+  width: 100%;
+}
+
+.reviews__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.reviews__list .reviews__item {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 15px;
+  align-self: stretch;
+
+  @media (min-width: $tablet-width) {
+    width: 560px;
+    grid-template-columns: min-content 1fr;
+    grid-template-rows: min-content 1fr;
+    gap: 31px 10px;
+    align-items: center;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 604px;
+    gap: 30px 10px;
+  }
+}
+
+.reviews__slider-scrollbar {
+  display: none;
+
+  @media (min-width: $tablet-width) {
+    grid-area: 3 / 1;
+    display: block;
+    width: 562px;
+    height: 2px;
+    background-color: rgba(49, 109, 194, 0.2);
+
+    @media (min-width: $desktop-width) {
+      width: 1136px;
+    }
+  }
+}
+
+.reviews__slider-scrollbar .swiper-scrollbar-drag {
+  background-color: $basic-accent;
+  cursor: pointer;
+}
+
+.reviews__slider-buttons {
+  grid-area: 1 / 1;
+  justify-self: flex-end;
+  display: flex;
+  column-gap: 8px;
+  padding-block: 4px;
+
+  @media (min-width: $tablet-width) {
+    grid-area: 3 / 1;
+    padding-right: 45px;
+    padding-block: 0;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding-right: 0;
+  }
+}
+
+.reviews__button {
+
+}
