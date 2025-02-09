@@ -1,0 +1,137 @@
+.page-footer {
+  padding-block: 40px;
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 15px;
+  justify-items: center;
+
+  @media (min-width: $tablet-width) {
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    align-items: center;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding-block: 60px 40px;
+    grid-template-columns: min-content 1fr min-content;
+    gap: 25px 52px;
+  }
+}
+
+.page-footer__logo {
+  width: 52px;
+  height: 52px;
+  margin-bottom: 5px;
+
+  @media ($tablet-width <= width < $desktop-width) {
+    grid-row: 1;
+    grid-column: 1 / -1;
+    justify-self: flex-start;
+  }
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 0;
+  }
+}
+
+.page-footer__navigation-list {
+  margin: 0;
+  margin-bottom: 5px;
+  padding: 0;
+  list-style: none;
+
+  @media ($tablet-width <= width < $desktop-width) {
+    grid-row: 1;
+    grid-column: 1 / -1;
+    justify-self: flex-end;
+    align-items: center;
+    width: 570px;
+    margin-bottom: 0;
+  }
+
+  @media (min-width: $desktop-width) {
+    justify-self: flex-start;
+    margin-bottom: 0;
+  }
+}
+
+.page-footer__privacy-policy {
+  margin: 0;
+  font-size: 12px;
+  line-height: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 12px;
+
+  @media (min-width: $tablet-width) {
+    justify-self: flex-start;
+    align-items: start;
+    row-gap: 10px;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 100%;
+    grid-column: 1 / -1;
+    grid-row: 2;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    row-gap: 4px;
+
+
+    @media (min-width: $tablet-width) {
+      row-gap: 2px;
+    }
+  }
+
+  a::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: currentColor;
+  }
+
+  a:hover {
+    color: $basic-accent;
+    opacity: 0.7;
+  }
+
+  a:focus-visible {
+    outline: none;
+    color: $basic-accent;
+  }
+
+  a:active {
+    color: $color-active-button;
+    opacity: 1;
+  }
+
+  span {
+    opacity: 0.6;
+
+    @media (min-width: $desktop-width) {
+      opacity: 1;
+    }
+  }
+}
+
+.page-footer__social {
+  @media (min-width: $tablet-width) {
+    justify-self: flex-end;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 240px;
+  }
+}

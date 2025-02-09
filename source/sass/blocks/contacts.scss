@@ -89,24 +89,50 @@
   }
 
   a {
-    transition: color 0.2s ease;
+    opacity: 1;
+    transition: opacity 0.2s ease;
+    position: relative;
 
     @media (min-width: $desktop-width) {
       line-height: 17px;
     }
   }
 
+  a::before {
+    content: "";
+    display: block;
+    height: 1px;
+    background-color: currentColor;
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    right: 50%;
+  }
+
   a:hover {
-    color: rgba(2, 102, 193, 0.1);
-    transition: color 0.4s ease;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
   }
 
   a:focus-visible {
-    color: $basic-secondary;
+    outline: none;
+    color: $basic-primary;
+  }
+
+  a:focus-visible::before {
+    left: 0;
+    right: 0;
+    transition: left 0.2s ease, right 0.2s ease;
   }
 
   a:active {
-    color: $basic-accent;
+    opacity: 1;
+  }
+
+  a:active::before {
+    left: 0;
+    right: 0;
+    transition: left 0.2s ease, right 0.2s ease;
   }
 }
 
