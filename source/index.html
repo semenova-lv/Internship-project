@@ -574,6 +574,52 @@
         </div>
       </div>
     </section>
+    <section class="form container" data-test="form">
+      <div class="form__container">
+        <div class="form__wrapper">
+          <h2 class="form__title title">Напишите нам</h2>
+          <p class="form__information">Оставьте ваши контакты, если у вас
+            остались вопросы — мы на них ответим!</p>
+          <form action="https://echo.htmlacademy.ru" method="post" novalidate>
+            <p class="form__field-group field-group">
+              <label class="field-group__control" for="name">Имя</label>
+              <input class="field-group__input" type="text" id="name" name="name" pattern="^[a-zA-Zа-яА-ЯёЁ ]+$" required>
+            </p>
+            <p class="form__field-group field-group">
+              <label class="field-group__control" for="phone">Телефон</label>
+              <input class="field-group__input" type="tel" id="phone" name="phone" pattern="\+?[0-9\s\-\(\)]+" required>
+            </p>
+            <p class="form__field-group field-group">
+              <label class="field-group__control" for="comment">Ваше сообщение</label>
+              <textarea class="field-group__input field-group__input--textarea" id="comment" name="comment"></textarea>
+            </p>
+            <div class="form__field-group form__field-group--select field-group">
+              <label class="field-group__control field-group__control--select" for="city">Выберите город</label>
+              <div class="select">
+                <button class="field-group__input select__button" type="button" aria-label="Выберите город">&nbsp;</button>
+                <ul class="select__list">
+                  <li class="select__item" role="option" data-value=" ">&nbsp;</li>
+                  <li class="select__item" role="option" data-value="St Petersburg">Санкт-Петербург</li>
+                  <li class="select__item" role="option" data-value="St Petersburg">Санкт-Петербург</li>
+                  <li class="select__item" role="option" data-value="Samara">Самара</li>
+                </ul>
+              </div>
+              <input class="visually-hidden" type="text" id="city" name="city" tabindex="-1">
+            </div>
+            <p class="form__field-group field-group">
+              <label class="field-group__control field-group__control--checkbox">
+                <input class="visually-hidden" id="consent" name="consent" type="checkbox">
+                <span class="field-group__control-mark"></span>
+                <span class="field-group__control-label">Я согласен на обработку моих<br> персональных<br>
+                  данных</span>
+              </label>
+            </p>
+            <button class="form__button button button--secondary" type="submit">Отправить</button>
+          </form>
+        </div>
+      </div>
+
+    </section>
   </main>
   <footer class="page-footer container" data-test="footer">
     <div class="page-footer__logo">

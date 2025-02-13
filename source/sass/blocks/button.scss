@@ -109,4 +109,36 @@
   &--disabled::before {
     background-color: rgba(255, 255, 255, 0.6);
   }
+
+  &--secondary {
+    color: $white;
+  }
+
+  &--secondary::before {
+    background-color: $basic-accent;
+  }
+
+  &--secondary:not(:disabled):hover {
+    color: $basic-accent;
+    background-color: $white;
+    transition: color 0.3s ease, background-color 0.3s ease;
+  }
+
+  &--secondary:not(:disabled):active {
+    color: rgba(49, 109, 194, 0.7);
+  }
+
+  &--secondary:not(:disabled):hover::before {
+    background-color: $white;
+    transform: rotate(45deg);
+    transition: transform 0.3s ease;
+  }
+
+  &--secondary:not(:disabled):active::after {
+    background-color: $basic-accent;
+  }
+
+  &--secondary:not(:disabled):active::before {
+    background-color: rgba(255, 255, 255, 0.7);
+  }
 }

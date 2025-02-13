@@ -1,0 +1,87 @@
+.select {
+  width: 260px;
+  height: min-content;
+  position: relative;
+
+  @media (min-width: $tablet-width) {
+    width: 100%;
+  }
+}
+
+.select__button {
+  height: 52px;
+  position: relative;
+  padding-inline: 20px 40px;
+  cursor: pointer;
+  text-align: start;
+
+  &::after {
+    content: "";
+    display: block;
+    width: 16px;
+    height: 16px;
+    mask-image: url("/__spritemap#sprite-icon-arrow-down-view");
+    mask-size: contain;
+    mask-position: center;
+    mask-repeat: no-repeat;
+    background-color: $white;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%) rotate(180deg);
+    right: 20px;
+  }
+
+  &:focus {
+    outline: auto;
+  }
+}
+
+.select__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background-color: $white;
+  color: $basic-primary;
+  border-radius: 8px;
+  border: 1px solid $white;
+  display: none;
+  max-height: 194px;
+  overflow-y: auto;
+  position: absolute;
+  top: 52px;
+  margin-top: 4px;
+  left: 0;
+  right: 0;
+  z-index: 2;
+}
+
+.select--open {
+  .select__button::after {
+    transform: translateY(-50%) rotate(0deg);
+  }
+
+  .select__list {
+    display: block;
+  }
+}
+
+
+.select__item {
+  font-size: 14px;
+  line-height: 14px;
+  padding: 17px 20px;
+  min-height: 48px;
+  box-sizing: border-box;
+  cursor: pointer;
+
+  &:hover {
+    color: $basic-accent;
+  }
+
+  &--current,
+  &:focus,
+  &:active {
+    background-color: $basic-accent;
+    color: $white;
+  }
+}
