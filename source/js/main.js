@@ -9,3 +9,4 @@ import './programs.js';
 import './faq.js';
 import './reviews.js';
 import './select.js';
+import './modal.js';

@@ -85,3 +85,13 @@
     color: $white;
   }
 }
+
+.select--modal {
+  .select__button::after {
+    background-color: $basic-primary;
+  }
+
+  .select__list {
+    border-color: $basic-primary;
+  }
+}

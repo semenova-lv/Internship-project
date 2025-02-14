@@ -672,6 +672,52 @@
       </ul>
     </section>
   </footer>
+  <div class="modal modal--closed">
+    <div class="modal__wrapper">
+      <button class="modal__close-button" type="button">
+        <span class="visually-hidden">Закрыть</span>
+      </button>
+
+      <section class="modal__content">
+        <h2 class="modal__tittle title">Напишите нам</h2>
+        <p class="modal__information">Оставьте ваши контакты, если у вас остались вопросы — мы на них ответим!</p>
+        <form action="https://echo.htmlacademy.ru" method="post" novalidate>
+          <p class="modal__field-group field-group field-group--modal">
+            <label class="field-group__control" for="modal-name">Имя</label>
+            <input class="field-group__input" type="text" id="modal-name" name="name" pattern="^[a-zA-Zа-яА-ЯёЁ ]+$" required>
+          </p>
+          <p class="modal__field-group field-group field-group--modal">
+            <label class="field-group__control" for="modal-phone">Телефон</label>
+            <input class="field-group__input" type="tel" id="modal-phone" name="phone" pattern="\+?[0-9\s\-\(\)]+" required>
+          </p>
+          <div class="modal__field-group modal__field-group--select field-group field-group--modal">
+            <label class="field-group__control field-group__control--select" for="modal-city">Выберите город</label>
+            <div class="select select--modal">
+              <button class="field-group__input select__button" type="button" aria-label="Выберите город">&nbsp;</button>
+              <ul class="select__list">
+                <li class="select__item" role="option" data-value=" ">&nbsp;</li>
+                <li class="select__item" role="option" data-value="St Petersburg">Санкт-Петербург</li>
+                <li class="select__item" role="option" data-value="St Petersburg">Санкт-Петербург</li>
+                <li class="select__item" role="option" data-value="Samara">Самара</li>
+              </ul>
+            </div>
+            <input class="visually-hidden" type="text" id="modal-city" name="city" tabindex="-1">
+          </div>
+          <p class="modal__field-group field-group field-group--modal">
+            <label class="field-group__control field-group__control--checkbox">
+              <input class="visually-hidden" id="modal-consent" name="consent" type="checkbox">
+              <span class="field-group__control-mark field-group__control-mark--modal"></span>
+              <span class="field-group__control-label">Я согласен на обработку моих персональных
+                данных</span>
+            </label>
+          </p>
+          <button class="modal__button button button--primary" type="submit">Отправить</button>
+        </form>
+
+      </section>
+
+    </div>
+  </div>
   <script type="module" src="js/main.js"></script>
 </body>
 

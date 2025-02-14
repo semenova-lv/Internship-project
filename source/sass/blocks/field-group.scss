@@ -99,11 +99,18 @@
   height: 20px;
   border-radius: 2px;
   background-color: $white;
+  color: $basic-accent;
   display: flex;
   justify-content: center;
   align-items: center;
   outline: 1px solid $white;
   outline-offset: -1px;
+
+  &--modal {
+    background-color: $basic-accent;
+    color: $white;
+    outline-color: $basic-accent;
+  }
 }
 
 .field-group__control-label {
@@ -128,7 +135,7 @@
   mask-repeat: no-repeat;
   mask-position: center;
   mask-size: contain;
-  background-color: $basic-accent;
+  background-color: currentColor;
 }
 
 .field-group__control--checkbox:has(input:not(:disabled):hover) .field-group__control-mark,
@@ -144,6 +151,11 @@
   background-color: rgba(255, 255, 255, 0.6);
 }
 
+.field-group__control--checkbox:has(input:disabled) .field-group__control-mark--modal {
+  background-color: rgba(169, 175, 183, 0.2);
+  outline-color: rgba(169, 175, 183, 0.5);
+}
+
 .field-group__control--checkbox:has(.field-group__input--invalid) .field-group__control-mark {
   background-color: rgba(255, 94, 102, 0.2);
   outline-color: $color-error;
@@ -152,11 +164,13 @@
 .field-group__control--checkbox:has(input:not(:disabled):checked:hover) .field-group__control-mark,
 .field-group__control--checkbox:has(input:not(:disabled):checked:focus) .field-group__control-mark {
   background-color: transparent;
+  color: $white;
 }
 
-.field-group__control--checkbox:has(input:not(:disabled):checked:hover) .field-group__control-mark::before,
-.field-group__control--checkbox:has(input:not(:disabled):checked:focus) .field-group__control-mark::before {
-  background-color: $white;
+.field-group__control--checkbox:has(input:not(:disabled):checked:hover) .field-group__control-mark--modal,
+.field-group__control--checkbox:has(input:not(:disabled):checked:focus) .field-group__control-mark--modal {
+  background-color: transparent;
+  color: $basic-accent;
 }
 
 .field-group__control--checkbox:has(input:disabled:checked) .field-group__control-mark {
@@ -167,4 +181,58 @@
 .field-group__control--checkbox:has(input:disabled:checked) .field-group__control-mark::before {
   background-color: $white;
   opacity: 0.7;
+}
+
+.field-group--modal {
+  row-gap: 8px;
+
+  @media (min-width: $tablet-width) {
+    row-gap: 12px;
+  }
+
+  .field-group__control {
+    font-size: 14px;
+    color: $basic-primary;
+  }
+
+  .field-group__control--select {
+    @media (min-width: $desktop-width) {
+      line-height: 18px;
+    }
+  }
+
+  .field-group__input {
+    border-color: rgba(72, 72, 72, 0.3);
+    height: 44px;
+    color: $basic-primary;
+
+    @media (min-width: $tablet-width) {
+      height: 50px;
+    }
+  }
+
+  .field-group__input:not(:disabled):hover {
+    border-color: $basic-primary;
+  }
+
+  .field-group__input:not(:disabled):focus,
+  .field-group__input:not(:disabled):active {
+    outline: none;
+    border-color: $basic-primary;
+  }
+
+  .field-group__input:disabled {
+    background-color: rgba(169, 175, 183, 0.2);
+    border-color: rgba(169, 175, 183, 0.5);
+  }
+
+  &:has(.field-group__input:disabled) .field-group__control {
+    color: $color-disabled;
+    opacity: 0.6;
+  }
+
+  .field-group__control-label {
+    font-size: 12px;
+    opacity: 0.9;
+  }
 }
