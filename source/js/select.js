@@ -17,6 +17,8 @@ const initSelect = (classSelect) => {
 
   function selectOpen() {
     selectElement.classList.add('select--open');
+    selectButton.setAttribute('aria-expanded', 'true');
+    selectList.setAttribute('aria-hidden', 'false');
     updateSelect();
     selectItems.forEach((item) => {
       item.setAttribute('tabindex', '0');
@@ -31,6 +33,8 @@ const initSelect = (classSelect) => {
 
   function selectClose() {
     selectElement.classList.remove('select--open');
+    selectButton.setAttribute('aria-expanded', 'false');
+    selectList.setAttribute('aria-hidden', 'true');
     selectItems.forEach((item) => {
       item.setAttribute('tabindex', '-1');
     });

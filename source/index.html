@@ -27,7 +27,7 @@
         </div>
         <nav class="page-header__navigation navigation">
           <button class="navigation__toggle" type="button" aria-expanded="false">Меню</button>
-          <ul class="navigation__list site-list">
+          <ul class="navigation__list site-list" aria-hidden="true">
             <li class="site-list__item">
               <a class="site-list__link" href="#about">О проекте</a>
             </li>
@@ -35,16 +35,16 @@
               <a class="site-list__link site-list__link--dropdown" href="#" aria-expanded="false" aria-controls="programs-submenu">Программы</a>
               <ul class="site-list__submenu" id="programs-submenu" aria-hidden="true">
                 <li class="site-list__item">
-                  <a class="site-list__link" href="#">Стажировки</a>
+                  <a class="site-list__link site-list__link-submenu" href="#">Стажировки</a>
                 </li>
                 <li class="site-list__item">
-                  <a class="site-list__link" href="#">Волонтёрство</a>
+                  <a class="site-list__link site-list__link-submenu" href="#">Волонтёрство</a>
                 </li>
                 <li class="site-list__item">
-                  <a class="site-list__link" href="#">Учёба</a>
+                  <a class="site-list__link site-list__link-submenu" href="#">Учёба</a>
                 </li>
                 <li class="site-list__item">
-                  <a class="site-list__link" href="#">Религия</a>
+                  <a class="site-list__link site-list__link-submenu" href="#">Религия</a>
                 </li>
               </ul>
             </li>
@@ -58,19 +58,19 @@
               <a class="site-list__link site-list__link--dropdown" href="#" aria-expanded="false" aria-controls="news-submenu">новости</a>
               <ul class="site-list__submenu" id="news-submenu" aria-hidden="true">
                 <li class="site-list__item">
-                  <a class="site-list__link" href="#">общее</a>
+                  <a class="site-list__link site-list__link-submenu" href="#">общее</a>
                 </li>
                 <li class="site-list__item">
-                  <a class="site-list__link" href="#">Волонтёрство</a>
+                  <a class="site-list__link site-list__link-submenu" href="#">Волонтёрство</a>
                 </li>
                 <li class="site-list__item">
-                  <a class="site-list__link" href="#">Стажировки</a>
+                  <a class="site-list__link site-list__link-submenu" href="#">Стажировки</a>
                 </li>
                 <li class="site-list__item">
-                  <a class="site-list__link" href="#">Карьера</a>
+                  <a class="site-list__link site-list__link-submenu" href="#">Карьера</a>
                 </li>
                 <li class="site-list__item">
-                  <a class="site-list__link" href="#">путешествия</a>
+                  <a class="site-list__link site-list__link-submenu" href="#">путешествия</a>
                 </li>
               </ul>
             </li>
@@ -216,11 +216,7 @@
     <section class="programs" data-test="programs" id="programs">
       <div class="programs__wrapper container">
         <h2 class="programs__title title">Программы</h2>
-        <div class="programs__slider-buttons">
-          <button class="programs__slider-button programs__slider-button--prev slider-button" type="button" aria-label="Показать предыдущий слайд"></button>
-          <button class="programs__slider-button programs__slider-button--next slider-button slider-button--next" type="button" aria-label="Показать следующий слайд"></button>
-        </div>
-
+        <a class="programs__button button button--primary" href="#">все программы</a>
         <div class="programs__slider swiper">
           <ul class="programs__list swiper-wrapper">
             <li class="programs__item program-card swiper-slide">
@@ -316,8 +312,11 @@
             </li>
           </ul>
         </div>
+        <div class="programs__slider-buttons">
+          <button class="programs__slider-button programs__slider-button--prev slider-button" type="button" aria-label="Показать предыдущий слайд"></button>
+          <button class="programs__slider-button programs__slider-button--next slider-button slider-button--next" type="button" aria-label="Показать следующий слайд"></button>
+        </div>
         <div class="programs__slider-scrollbar"></div>
-        <a class="programs__button button button--primary" href="#">все программы</a>
       </div>
 
     </section>
@@ -596,8 +595,8 @@
             <div class="form__field-group form__field-group--select field-group">
               <label class="field-group__control field-group__control--select" for="city">Выберите город</label>
               <div class="select">
-                <button class="field-group__input select__button" type="button" aria-label="Выберите город">&nbsp;</button>
-                <ul class="select__list">
+                <button class="field-group__input select__button" type="button" aria-label="Выберите город" aria-expanded="false">&nbsp;</button>
+                <ul class="select__list" aria-hidden="true">
                   <li class="select__item" role="option" data-value=" ">&nbsp;</li>
                   <li class="select__item" role="option" data-value="St Petersburg">Санкт-Петербург</li>
                   <li class="select__item" role="option" data-value="St Petersburg">Санкт-Петербург</li>
@@ -693,8 +692,8 @@
           <div class="modal__field-group modal__field-group--select field-group field-group--modal">
             <label class="field-group__control field-group__control--select" for="modal-city">Выберите город</label>
             <div class="select select--modal">
-              <button class="field-group__input select__button" type="button" aria-label="Выберите город">&nbsp;</button>
-              <ul class="select__list">
+              <button class="field-group__input select__button" type="button" aria-label="Выберите город" aria-expanded="false">&nbsp;</button>
+              <ul class="select__list" aria-hidden="true">
                 <li class="select__item" role="option" data-value=" ">&nbsp;</li>
                 <li class="select__item" role="option" data-value="St Petersburg">Санкт-Петербург</li>
                 <li class="select__item" role="option" data-value="St Petersburg">Санкт-Петербург</li>

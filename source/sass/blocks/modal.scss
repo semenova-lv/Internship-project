@@ -82,6 +82,26 @@
       mask-size: 18px 18px;
     }
   }
+
+  &:not(:disabled):hover {
+    opacity: 0.7;
+  }
+
+  &:not(:disabled):active {
+    opacity: 1;
+  }
+
+  &:not(:disabled):active::before {
+    background-color: $color-active-button;
+  }
+
+  &:disabled {
+    pointer-events: none;
+  }
+
+  &:disabled::before {
+    background-color: $color-disabled;
+  }
 }
 
 .modal__content {
