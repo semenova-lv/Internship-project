@@ -1,4 +1,4 @@
-import {modalSelect, formSelect} from './select.js';
+import {initSelect} from './select.js';
 import {modalClose} from './modal.js';
 import {showAlert} from './util.js';
 
@@ -88,6 +88,7 @@ function validateForm (form) {
 
 formList.forEach((form) => {
   const submitButton = form.querySelector('button[type="submit"]');
+  const selectElenent = initSelect(form, 'field-group--select');
 
   form.addEventListener('submit', async (evt) => {
     evt.preventDefault();
@@ -107,11 +108,9 @@ formList.forEach((form) => {
           throw new Error('Ошибка при отправке данных');
         }
         form.reset();
+        selectElenent.selectReset();
         if (form.dataset.id === 'modal') {
-          modalSelect.selectReset();
           modalClose();
-        } else {
-          formSelect.selectReset();
         }
         showAlert('Форма успешно отправлена!');
       } catch (error) {

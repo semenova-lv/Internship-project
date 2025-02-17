@@ -1,5 +1,5 @@
-const initSelect = (classSelect) => {
-  const selectElement = document.querySelector(`.${classSelect}`);
+const initSelect = (form, classSelect) => {
+  const selectElement = form.querySelector(`.${classSelect}`);
   const selectButton = selectElement.querySelector('.select__button');
   const selectList = selectElement.querySelector('.select__list');
   const selectItems = selectList.querySelectorAll('.select__item');
@@ -126,7 +126,4 @@ const initSelect = (classSelect) => {
   return {selectReset};
 };
 
-const modalSelect = initSelect('modal__field-group--select');
-const formSelect = initSelect('form__field-group--select');
-
-export {modalSelect, formSelect};
+export {initSelect};
