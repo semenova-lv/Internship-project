@@ -10,3 +10,5 @@ import './faq.js';
 import './reviews.js';
 import './select.js';
 import './modal.js';
+import './phone-mask.js';
+import './validation-form.js';

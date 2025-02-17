@@ -86,6 +86,10 @@
   }
 }
 
+.select:has(.select__item:focus) .select__button {
+  border-color: $white;
+}
+
 .select--modal {
   .select__button::after {
     background-color: $basic-primary;

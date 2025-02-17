@@ -115,7 +115,18 @@ const initSelect = (classSelect) => {
       });
     }
   }
+
+  function selectReset() {
+    currentIndex = 0;
+    updateSelect();
+    selectButton.textContent = selectItems[currentIndex].textContent;
+    selectInput.setAttribute('value', selectItems[currentIndex].dataset.value);
+  }
+
+  return {selectReset};
 };
 
-initSelect('modal__field-group--select');
-initSelect('form__field-group--select');
+const modalSelect = initSelect('modal__field-group--select');
+const formSelect = initSelect('form__field-group--select');
+
+export {modalSelect, formSelect};

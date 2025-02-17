@@ -579,20 +579,20 @@
           <h2 class="form__title title">Напишите нам</h2>
           <p class="form__information">Оставьте ваши контакты, если у вас
             остались вопросы — мы на них ответим!</p>
-          <form action="https://echo.htmlacademy.ru" method="post" novalidate>
+          <form action="https://echo.htmlacademy.ru" method="post" novalidate data-id="form">
             <p class="form__field-group field-group">
               <label class="field-group__control" for="name">Имя</label>
-              <input class="field-group__input" type="text" id="name" name="name" pattern="^[a-zA-Zа-яА-ЯёЁ ]+$" required>
+              <input class="field-group__input" type="text" id="name" name="name" required>
             </p>
             <p class="form__field-group field-group">
               <label class="field-group__control" for="phone">Телефон</label>
-              <input class="field-group__input" type="tel" id="phone" name="phone" pattern="\+?[0-9\s\-\(\)]+" required>
+              <input class="field-group__input" type="tel" id="phone" name="phone" required>
             </p>
             <p class="form__field-group field-group">
               <label class="field-group__control" for="comment">Ваше сообщение</label>
               <textarea class="field-group__input field-group__input--textarea" id="comment" name="comment"></textarea>
             </p>
-            <div class="form__field-group form__field-group--select field-group">
+            <div class="form__field-group form__field-group--select field-group field-group--select">
               <label class="field-group__control field-group__control--select" for="city">Выберите город</label>
               <div class="select">
                 <button class="field-group__input select__button" type="button" aria-label="Выберите город" aria-expanded="false">&nbsp;</button>
@@ -680,16 +680,16 @@
       <section class="modal__content">
         <h2 class="modal__tittle title">Напишите нам</h2>
         <p class="modal__information">Оставьте ваши контакты, если у вас остались вопросы — мы на них ответим!</p>
-        <form action="https://echo.htmlacademy.ru" method="post" novalidate>
+        <form action="https://echo.htmlacademy.ru" method="post" novalidate data-id="modal">
           <p class="modal__field-group field-group field-group--modal">
             <label class="field-group__control" for="modal-name">Имя</label>
-            <input class="field-group__input" type="text" id="modal-name" name="name" pattern="^[a-zA-Zа-яА-ЯёЁ ]+$" required>
+            <input class="field-group__input" type="text" id="modal-name" name="name" required>
           </p>
           <p class="modal__field-group field-group field-group--modal">
             <label class="field-group__control" for="modal-phone">Телефон</label>
-            <input class="field-group__input" type="tel" id="modal-phone" name="phone" pattern="\+?[0-9\s\-\(\)]+" required>
+            <input class="field-group__input" type="tel" id="modal-phone" name="phone" required>
           </p>
-          <div class="modal__field-group modal__field-group--select field-group field-group--modal">
+          <div class="modal__field-group modal__field-group--select field-group field-group--select field-group--modal">
             <label class="field-group__control field-group__control--select" for="modal-city">Выберите город</label>
             <div class="select select--modal">
               <button class="field-group__input select__button" type="button" aria-label="Выберите город" aria-expanded="false">&nbsp;</button>

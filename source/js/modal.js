@@ -42,3 +42,4 @@ modalButton.addEventListener('click', () => {
   modalClose();
 });
 
+export {modalClose};
