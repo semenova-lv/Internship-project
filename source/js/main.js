@@ -12,3 +12,5 @@ import './select.js';
 import './modal.js';
 import './phone-mask.js';
 import './validation-form.js';
+import './news.js';
+import './news-slider.js';
