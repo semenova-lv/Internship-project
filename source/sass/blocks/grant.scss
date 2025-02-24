@@ -57,30 +57,14 @@
 }
 
 .grant__illustration {
-  width: 290px;
-  height: 200px;
-  border-radius: 16px;
-  overflow: hidden;
-
-  @media (min-width: $tablet-width) {
-    width: 678px;
-    height: 375px;
-  }
-
-  @media (min-width: $desktop-width) {
-    width: 498px;
-    height: 363px;
-  }
+  width: 100%;
 
   img {
     display: block;
-    width: 100%;
+    margin: 0 auto;
     object-fit: cover;
+    border-radius: 16px;
   }
-}
-
-.grant__conditions {
-
 }
 
 .grant__conditions-title {

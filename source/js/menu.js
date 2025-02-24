@@ -4,8 +4,11 @@ const subMenuList = document.querySelectorAll('.site-list__submenu');
 const menuLinks = menuList.querySelectorAll('.site-list__link');
 
 menuList.style.maxHeight = '0';
+menuList.setAttribute('aria-hidden', 'true');
+
 subMenuList.forEach((subMenu) => {
   subMenu.style.maxHeight = '0';
+  subMenu.setAttribute('aria-hidden', 'true');
 });
 
 menuLinks.forEach((link) => {
@@ -37,7 +40,7 @@ const openMenu = () => {
   menuList.style.maxHeight = `${menuList.scrollHeight}px`;
 
   menuLinks.forEach((link) => {
-    if (!link.classList.contains('site-list__link-submenu')) {
+    if (!link.classList.contains('site-list__link-submenu') || link.classList.contains('site-list__link--opened')) {
       link.setAttribute('tabindex', '0');
     }
   });
@@ -80,6 +83,7 @@ const menuUpdate = (link) => {
     submenuList.setAttribute('aria-hidden', 'true');
     submenuLinks.forEach((submenuLink) => {
       submenuLink.setAttribute('tabindex', '-1');
+      submenuLink.classList.remove('site-list__link--opened');
     });
     submenuList.style.maxHeight = '0';
   } else {
@@ -88,6 +92,7 @@ const menuUpdate = (link) => {
     submenuList.setAttribute('aria-hidden', 'false');
     submenuLinks.forEach((submenuLink) => {
       submenuLink.setAttribute('tabindex', '0');
+      submenuLink.classList.add('site-list__link--opened');
     });
     submenuList.style.maxHeight = `${submenuList.scrollHeight}px`;
   }
@@ -97,24 +102,22 @@ const menuUpdate = (link) => {
 
 menuList.addEventListener('click', (evt) => {
   const currentLink = evt.target.closest('.site-list__link');
-  const hasSubmenu = currentLink.classList.contains('site-list__link--dropdown');
 
   if (!currentLink) {
     return;
   }
+
+  const hasSubmenu = currentLink.classList.contains('site-list__link--dropdown');
+
   menuLinks.forEach((link) => {
     link.classList.remove('site-list__link--current');
   });
   currentLink.classList.add('site-list__link--current');
   if (!hasSubmenu) {
-    menuLinks.forEach((link) => {
-      link.classList.remove('site-list__link--current');
-    });
-    currentLink.classList.add('site-list__link--current');
     closeMenu();
+    currentLink.blur();
     return;
   }
-  evt.preventDefault();
 
   currentLink.classList.toggle('site-list__link--opened');
   menuUpdate(currentLink);

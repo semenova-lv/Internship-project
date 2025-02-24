@@ -35,7 +35,7 @@ const heroSlider = new Swiper('.hero__slider', {
   slidesPerView: 1,
   centeredSlides: true,
   spaceBetween: 0,
-  // autoHeight: true,
+  height: 'auto',
 
   pagination: {
     clickable: true,

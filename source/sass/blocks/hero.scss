@@ -24,12 +24,8 @@
 
   @media (min-width: $desktop-width) {
     width: 1440px;
-    left: calc((100% - 1440px)/2);
+    left: calc((100% - 1440px) / 2);
   }
-}
-
-.hero__content {
-
 }
 
 .hero__slider.swiper {
@@ -91,7 +87,8 @@
 }
 
 .hero__slide-information {
-
+  overflow-y: auto;
+  scrollbar-width: thin;
 }
 
 .hero__slide-content {
@@ -111,22 +108,23 @@
   font-size: 22px;
   line-height: 26px;
   font-weight: 400;
+  width: 290px;
+  box-sizing: border-box;
 
   @media (min-width: $tablet-width) {
-    flex-grow: 1;
     font-size: 36px;
     line-height: 44px;
     padding: 30px 69px 24px 40px;
     border-top-right-radius: 30px;
     border-bottom-right-radius: 30px;
-    max-width: 550px;
+    width: 659px;
   }
 
   @media (min-width: $desktop-width) {
     font-size: 54px;
     line-height: 62px;
     padding: 40px 50px 30px;
-    max-width: 868px;
+    width: 968px;
   }
 }
 
@@ -245,5 +243,46 @@
 
   &:focus-visible {
     border-color: $basic-accent;
+  }
+}
+
+.hero__decoration-angle {
+  position: relative;
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    right: -10px;
+    width: 10px;
+    height: 10px;
+    background-image: radial-gradient(circle, transparent 10px, $white 10px);
+    background-size: 20px 20px;
+
+    @media (min-width: $tablet-width) {
+      width: 20px;
+      height: 20px;
+      background-image: radial-gradient(circle, transparent 20px, $white 20px);
+      background-size: 40px 40px;
+      right: -20px;
+    }
+  }
+
+  &--top::after {
+    background-position: top left;
+    top: 0;
+
+    @media (min-width: $tablet-width) {
+      width: 26px;
+      height: 26px;
+      background-image: radial-gradient(circle, transparent 26px, $white 26px);
+      background-size: 52px 52px;
+      right: -26px;
+    }
+  }
+
+  &--bottom::after {
+    background-position: bottom left;
+    bottom: 0;
   }
 }

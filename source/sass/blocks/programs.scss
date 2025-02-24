@@ -50,14 +50,14 @@
   }
 }
 
-.programs__slider-button {
-
-}
-
 .programs__slider {
   width: 100%;
-  height: 400px;
+  min-height: 400px;
   grid-area: 2 / 1;
+
+  @media (min-width: $tablet-width) {
+    min-height: 420px;
+  }
 }
 
 .programs__list {
@@ -69,6 +69,7 @@
 .programs__item.swiper-slide {
   display: grid;
   grid-template-columns: 1fr;
+  height: auto;
 
   @media (min-width: $tablet-width) {
     width: 324px;
@@ -84,20 +85,13 @@
 
   @media (min-width: $tablet-width) {
     display: block;
-    width: 562px;
-    height: 2px;
-    background-color: $color-overlay-photo;
     grid-area: 3 / 1;
+    width: 562px;
   }
 
   @media (min-width: $desktop-width) {
     width: 1136px;
   }
-}
-
-.programs__slider-scrollbar .swiper-scrollbar-drag {
-  background-color: $basic-accent;
-  cursor: pointer;
 }
 
 .programs__button {

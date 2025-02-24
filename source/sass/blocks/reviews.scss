@@ -72,18 +72,11 @@
     grid-area: 3 / 1;
     display: block;
     width: 562px;
-    height: 2px;
-    background-color: rgba(49, 109, 194, 0.2);
 
     @media (min-width: $desktop-width) {
       width: 1136px;
     }
   }
-}
-
-.reviews__slider-scrollbar .swiper-scrollbar-drag {
-  background-color: $basic-accent;
-  cursor: pointer;
 }
 
 .reviews__slider-buttons {
@@ -102,8 +95,4 @@
   @media (min-width: $desktop-width) {
     padding-right: 0;
   }
-}
-
-.reviews__button {
-
 }

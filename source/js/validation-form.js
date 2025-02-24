@@ -32,7 +32,7 @@ const isValidName = (input) => NAME_REGEX.test(input.value);
 
 const isValidPhone = (input) => PHONE_REGEX.test(input.value);
 
-function validateForm (form) {
+const validateForm = (form) => {
   const fieldPhone = form.querySelector('input[name="phone"]');
   const fieldName = form.querySelector('input[name="name"]');
   const fieldCity = form.querySelector('input[name="city"]');
@@ -84,7 +84,7 @@ function validateForm (form) {
   }
 
   return isValid;
-}
+};
 
 formList.forEach((form) => {
   const submitButton = form.querySelector('button[type="submit"]');

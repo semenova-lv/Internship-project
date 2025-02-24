@@ -1,22 +1,6 @@
 const showAlert = (message) => {
   const alertContainer = document.createElement('div');
-  alertContainer.style.zIndex = '100';
-  alertContainer.style.width = '300px';
-  alertContainer.style.height = '200px';
-  alertContainer.style.borderRadius = '16px';
-  alertContainer.style.position = 'fixed';
-  alertContainer.style.left = '50%';
-  alertContainer.style.top = '50%';
-  alertContainer.style.transform = 'translate(-50%, -50%)';
-  alertContainer.style.fontSize = '30px';
-  alertContainer.style.lineHeight = '50px';
-  alertContainer.style.display = 'flex';
-  alertContainer.style.justifyContent = 'center';
-  alertContainer.style.alignItems = 'center';
-  alertContainer.style.textAlign = 'center';
-  alertContainer.style.backgroundColor = 'white';
-  alertContainer.style.color = '#484848';
-
+  alertContainer.classList.add('message');
   alertContainer.textContent = message;
 
   document.body.append(alertContainer);
@@ -26,4 +10,15 @@ const showAlert = (message) => {
   }, 2000);
 };
 
-export {showAlert};
+const getBreakpoint = () => {
+  const width = window.innerWidth;
+  if (width < 768) {
+    return 'mobile';
+  }
+  if (width < 1440) {
+    return 'tablet';
+  }
+  return 'desktop';
+};
+
+export {showAlert, getBreakpoint};

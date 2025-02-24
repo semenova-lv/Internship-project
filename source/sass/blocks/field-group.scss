@@ -233,6 +233,10 @@
     }
   }
 
+  .field-group__input--invalid {
+    border-color: $color-error;
+  }
+
   .field-group__input:not(:disabled):hover {
     border-color: $basic-primary;
   }

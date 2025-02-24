@@ -162,8 +162,6 @@
     content: "";
     display: block;
     box-sizing: border-box;
-
-    // margin-left: auto;
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -184,13 +182,7 @@
     mask-repeat: no-repeat;
     mask-size: 18px 18px;
     mask-position: center;
-
     grid-area: 1 / 1;
-
-    // position: absolute;
-    // top: 50%;
-    // right: 0;
-    // transform: translateY(-50%) rotate(0deg);
     transform: rotate(0deg);
     transition: transform 0.3s ease, mask-image 0.3s ease;
   }
@@ -203,8 +195,6 @@
     mask-image: url("/__spritemap#sprite-icon-minus-view");
     mask-size: 18px 2px;
     background-color: $basic-accent;
-
-    // transform: translateY(-50%) rotate(180deg);
     transform: rotate(180deg);
     transition: transform 0.3s ease, mask-image 0.3s ease;
   }

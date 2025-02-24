@@ -1,0 +1,28 @@
+.message {
+  position: fixed;
+  z-index: 100;
+  width: 300px;
+  height: 200px;
+  border-radius: 16px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: $white;
+  color: $basic-primary;
+  font-size: 16px;
+  line-height: 18px;
+
+  @media (min-width: $tablet-width) {
+    font-size: 20px;
+    line-height: 22px;
+  }
+
+  @media (min-width: $desktop-width) {
+    font-size: 24px;
+    line-height: 26px;
+  }
+}

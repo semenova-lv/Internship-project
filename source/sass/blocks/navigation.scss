@@ -127,8 +127,6 @@
   position: absolute;
   top: 100%;
   right: 0;
-
-  // box-sizing: border-box;
   overflow: hidden;
 
   padding-block: 0;
@@ -142,8 +140,6 @@
   &--open {
     padding-block: 32px 30px;
     padding-inline: 25px;
-
-    // padding-block: 0;
     transition: max-height 0.3s ease-in-out, padding-block 0.3s ease-in-out;
   }
 }

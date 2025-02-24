@@ -1,9 +1,10 @@
+import {getBreakpoint} from './util';
+
 import Swiper from 'swiper';
 import {Grid, Navigation, Pagination} from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/grid';
 
-const originalSlides = document.querySelectorAll('.news__item');
 const paginationWrapper = document.querySelector('.news__pagination');
 const nextButtonNavigation = document.querySelector('.news__button--next');
 const prevButtonNavigation = document.querySelector('.news__button--prev');
@@ -11,30 +12,6 @@ const prevButtonNavigation = document.querySelector('.news__button--prev');
 let newsSlider;
 let currentBreakpoint;
 let isCustomNavigation = false;
-
-function getBreakpoint () {
-  const width = window.innerWidth;
-  if (width < 768) {
-    return 'mobile';
-  }
-  if (width < 1440) {
-    return 'tablet';
-  }
-  return 'desktop';
-}
-
-function duplicateSledes () {
-  const sliderWrapper = document.querySelector('.news__list');
-  sliderWrapper.innerHTML = '';
-
-  const slidesToDuplicate = 3;
-
-  for (let i = 0; i < slidesToDuplicate; i++) {
-    originalSlides.forEach((slide) => {
-      sliderWrapper.appendChild(slide.cloneNode(true));
-    });
-  }
-}
 
 const initSwiper = () => {
   if (newsSlider) {
@@ -162,66 +139,41 @@ function renderPagination(swiper) {
   }
 }
 
+function updateSlide () {
+  updateActiveSlide(newsSlider);
+  updatePagination(newsSlider);
+  updateActivePagination(newsSlider);
+  updateButtonNavigation(newsSlider);
+}
+
+function shiftSlide (index) {
+  if(currentBreakpoint === 'desktop') {
+    newsSlider.activeIndex = index;
+    newsSlider.translateTo(-318 * index, 300);
+  } else {
+    newsSlider.slideTo(index);
+  }
+
+  updateSlide();
+}
+
 function onPaginationClick (evt) {
   const currentPaginationButton = evt.target.closest('.news__pagination-button');
   if(!currentPaginationButton) {
     return;
   }
   const idButton = Number(currentPaginationButton.dataset.id);
-  newsSlider.activeIndex = idButton;
-  if(currentBreakpoint === 'desktop') {
-    newsSlider.translateTo(-318 * idButton, 300);
-  } else {
-    newsSlider.slideTo(idButton);
-  }
-  updateActiveSlide(newsSlider);
-  updatePagination(newsSlider);
-  updateActivePagination(newsSlider);
-  updateButtonNavigation(newsSlider);
+  shiftSlide(idButton);
 }
 
 function onNavigationPrevClick() {
-  let newIndex;
-  if(currentBreakpoint === 'desktop') {
-    newIndex = newsSlider.activeIndex - 3;
-    if (newIndex < 0) {
-      newIndex = 0;
-    }
-    newsSlider.activeIndex = newIndex;
-    newsSlider.translateTo(-318 * newIndex, 300);
-  }
-  if (currentBreakpoint === 'tablet') {
-    newIndex = newsSlider.activeIndex - 2;
-    if (newIndex < 0) {
-      newIndex = 0;
-    }
-    newsSlider.slideTo(newIndex);
-  }
-  updateActiveSlide(newsSlider);
-  updatePagination(newsSlider);
-  updateActivePagination(newsSlider);
-  updateButtonNavigation(newsSlider);
+  const step = currentBreakpoint === 'desktop' ? 3 : 2;
+  shiftSlide(Math.max(newsSlider.activeIndex - step, 0));
 }
 
 function onNavigationNextClick() {
-  let newIndex;
-  const total = newsSlider.slides.length;
-  if(currentBreakpoint === 'desktop') {
-    newIndex = newsSlider.activeIndex + 3;
-    if (newIndex >= total - 3) {
-      newIndex = total - 3;
-    }
-    newsSlider.activeIndex = newIndex;
-    newsSlider.translateTo(-318 * newIndex, 300);
-  }
-  if (currentBreakpoint === 'tablet') {
-    newIndex = newsSlider.activeIndex + 2;
-    newsSlider.slideTo(newIndex);
-  }
-  updateActiveSlide(newsSlider);
-  updatePagination(newsSlider);
-  updateActivePagination(newsSlider);
-  updateButtonNavigation(newsSlider);
+  const step = currentBreakpoint === 'desktop' ? 3 : 2;
+  shiftSlide(Math.min(newsSlider.activeIndex + step, newsSlider.slides.length - step));
 }
 
 function updateButtonNavigation(swiper) {
@@ -264,15 +216,21 @@ const onWindowResize = () => {
 
   if (newBreakpoint !== currentBreakpoint) {
     currentBreakpoint = newBreakpoint;
-    duplicateSledes();
     initSwiper();
   }
 };
 
-window.addEventListener('load', () => {
+window.addEventListener('DOMContentLoaded', () => {
   currentBreakpoint = getBreakpoint();
-  duplicateSledes();
   initSwiper();
 });
 
 window.addEventListener('resize', onWindowResize);
+
+window.addEventListener('pageshow', () => {
+  if (newsSlider) {
+    newsSlider.update();
+  } else {
+    initSwiper();
+  }
+});

@@ -34,7 +34,6 @@
   height: min-content;
 
   @media (min-width: $tablet-width) {
-    width: 674px;
     justify-self: center;
   }
 
@@ -47,6 +46,11 @@
   margin: 0;
   padding: 0;
   list-style: none;
+
+  @media (min-width: $tablet-width) {
+    column-gap: 7px;
+    flex-wrap: wrap;
+  }
 
   @media (min-width: $desktop-width) {
     column-gap: 30px;
@@ -103,6 +107,10 @@
     opacity: 1;
     background-color: $white;
     border-color: $white;
+  }
+
+  &--active:focus-visible {
+    border-color: currentColor;
   }
 
   &:active {

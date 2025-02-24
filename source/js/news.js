@@ -4,6 +4,7 @@ import 'swiper/css';
 import 'swiper/css/grid';
 
 const tabsButtonsList = document.querySelector('.news__tab-navigation');
+let newsTabsSlider;
 
 const onTabButtonClick = (evt) => {
   const currentTabButton = evt.target.closest('.news__tab-button');
@@ -17,26 +18,29 @@ const onTabButtonClick = (evt) => {
 
 tabsButtonsList.addEventListener('click', onTabButtonClick);
 
-const newsTabsSlider = new Swiper('.news__tab-slider', {
-  modules: [Mousewheel, FreeMode],
-  enabled: true,
-  direction: 'horizontal',
-  slidesPerView: 'auto',
-  watchOverflow: true,
-  mousewheel: true,
-  freeMode: true,
-  spaceBetween: 10,
-  passiveListeners: true,
+const initSwiper = () => {
+  newsTabsSlider = new Swiper('.news__tab-slider', {
+    modules: [Mousewheel, FreeMode],
+    enabled: true,
+    direction: 'horizontal',
+    slidesPerView: 'auto',
+    watchOverflow: true,
+    mousewheel: true,
+    freeMode: true,
+    spaceBetween: 10,
+    passiveListeners: true,
+  });
+};
 
-  breakpoints: {
-    768: {
-      spaceBetween: 7,
-      enabled: false,
-    },
-    1440: {
-      spaceBetween: 0,
-    },
-  },
-});
+const onWindowResize = () => {
+  const isMobile = window.innerWidth < 768;
+  if (isMobile && !newsTabsSlider) {
+    initSwiper();
+  } else if (!isMobile && newsTabsSlider) {
+    newsTabsSlider.destroy(true, true);
+    newsTabsSlider = null;
+  }
+};
 
-newsTabsSlider.init();
+window.addEventListener('load', onWindowResize);
+window.addEventListener('resize', onWindowResize);

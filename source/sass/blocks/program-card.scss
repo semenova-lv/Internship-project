@@ -37,13 +37,13 @@
 
 .program-card__information {
   grid-area: 1 / 1;
-  height: auto;
   box-sizing: border-box;
   padding: 18px 10px;
   display: flex;
   flex-direction: column;
   justify-content: end;
   z-index: 1;
+
 
   @media (min-width: $tablet-width) {
     padding: 10px 20px;
@@ -99,39 +99,47 @@
   }
 }
 
-.program-card__text-content {
+.program-card__information-wrapper {
   background-color: $white;
-  font-size: 12px;
-  line-height: 14px;
   border-bottom-left-radius: 12px;
   border-bottom-right-radius: 12px;
   border-top-right-radius: 12px;
   padding: 12px 18px 15px;
-  min-height: 69px;
   box-sizing: border-box;
   display: grid;
   grid-template-columns: 1fr min-content;
   column-gap: 16px;
   align-items: center;
+  min-height: 69px;
 
   @media (min-width: $tablet-width) {
     min-height: 87px;
+  }
+
+  @media (min-width: $desktop-width) {
+    min-height: 82px;
+  }
+}
+
+.program-card__text-content {
+  font-size: 12px;
+  line-height: 14px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+
+  @media (min-width: $tablet-width) {
     font-size: 14px;
     line-height: 20px;
   }
 
   @media (min-width: $desktop-width) {
-    min-height: 82px;
     font-size: 14px;
     line-height: 18px;
   }
 
   p {
     margin: 0;
-  }
-
-  p:not(:last-of-type) {
-    margin-bottom: 10px;
   }
 }
 
